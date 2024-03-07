@@ -1,10 +1,13 @@
 import express from 'express';
 import compression from 'compression';
+import apiRouter from './api/index.js';
 
 const app = express();
 
 app.use(compression());
 app.disable('x-powered-by');
+
+app.use('/api', apiRouter);
 
 const viteDevServer =
   process.env.NODE_ENV === 'production'

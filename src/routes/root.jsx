@@ -1,4 +1,6 @@
-function App() {
+import { Outlet } from 'react-router';
+
+export default function Root() {
   return (
     <div>
       <header className="shadow h-16 flex items-center">
@@ -6,8 +8,9 @@ function App() {
           <h1 className="text-2xl">Bookmarks</h1>
         </div>
       </header>
+      <main className="mt-4 max-w-5xl mx-auto">
+        <Outlet />
+      </main>
     </div>
   );
 }
-
-export default App;

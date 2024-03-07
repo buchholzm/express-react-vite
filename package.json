@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "node server",
     "lint": "biome lint . --apply",
     "preview": "vite preview",
     "format": "biome format . --write"
   },
   "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.18.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

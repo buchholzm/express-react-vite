@@ -13,11 +13,13 @@
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
+    "@tailwindcss/vite": "^4.0.0-alpha.5",
     "compression": "^1.7.4",
     "express": "^4.18.3",
     "prisma": "^5.10.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^4.0.0-alpha.5"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",

@@ -4,11 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node server",
     "build": "vite build",
-    "start": "node server",
+    "start": "NODE_ENV=production node server",
     "lint": "biome lint . --apply",
-    "preview": "vite preview",
     "format": "biome format . --write"
   },
   "dependencies": {

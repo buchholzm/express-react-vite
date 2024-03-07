@@ -1,20 +1,31 @@
 import express from 'express';
 import compression from 'compression';
 
-const buildDir = new URL('../dist', import.meta.url).pathname;
-const assetsDir = new URL('../dist/assets', import.meta.url).pathname;
-
 const app = express();
 
 app.use(compression());
 app.disable('x-powered-by');
 
-// Server static build
-app.use(
-  '/assets',
-  express.static(assetsDir, { immutable: true, maxAge: '1y' }), // Vite build creates hashed filenames
-);
-app.use(express.static(buildDir, { maxAge: '1h' }));
+const viteDevServer =
+  process.env.NODE_ENV === 'production'
+    ? undefined
+    : await import('vite').then((vite) =>
+        vite.createServer({
+          server: { middlewareMode: true },
+        }),
+      );
+
+if (viteDevServer) {
+  app.use(viteDevServer.middlewares);
+} else {
+  const buildDir = new URL('../dist', import.meta.url).pathname;
+  const assetsDir = new URL('../dist/assets', import.meta.url).pathname;
+  app.use(
+    '/assets',
+    express.static(assetsDir, { immutable: true, maxAge: '1y' }),
+  );
+  app.use(express.static(buildDir, { maxAge: '1h' }));
+}
 
 const port = process.env.PORT || 3000;
 app.listen(port, () =>

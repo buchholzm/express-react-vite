@@ -8,7 +8,8 @@
     "build": "vite build",
     "start": "NODE_ENV=production node server",
     "lint": "biome lint . --apply",
-    "format": "biome format . --write"
+    "format": "biome format . --write",
+    "watch": "nodemon --watch server server"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",

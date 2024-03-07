@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './styles.css';
 
 import Root from './routes/root.jsx';
-import HomeRoute from './routes/home.jsx';
+import HomeRoute, { loader as homeLoader } from './routes/home.jsx';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -14,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: homeLoader,
         element: <HomeRoute />,
       },
     ],

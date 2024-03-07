@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "biome lint .",
+    "lint": "biome lint . --apply",
     "preview": "vite preview",
     "format": "biome format . --write"
   },

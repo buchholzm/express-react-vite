@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server",
     "build": "vite build",
-    "start": "NODE_ENV=production node server",
+    "start": "node server",
     "lint": "biome lint . --apply",
     "format": "biome format . --write",
     "watch": "nodemon --watch server server"

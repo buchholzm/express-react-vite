@@ -1,0 +1,29 @@
+# Build
+**/dist
+
+# Prisma
+db/dev.db
+
+# Docker
+**/.dockerignore
+**/docker-compose.yml
+**/Dockerfile
+
+# Sensible data
+**/.env*
+
+# Git
+**/.git
+**/.gitignore
+
+# Editor
+**/.vscode
+**/.editorconfig
+
+# NPM
+**/node_modules
+
+# Project
+LICENSE
+README.md
+CHANGELOG.md

@@ -5,6 +5,7 @@ const router = express.Router();
 const db = new PrismaClient();
 
 router.get('/topics', async (req, res) => {
+  console.log('Loading topics.');
   const topics = await db.topic.findMany();
   res.json(topics);
 });
